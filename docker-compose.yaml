@@ -1,0 +1,13 @@
+services:
+  ai:
+    build:
+      context: ./
+      dockerfile: ./devops/Dockerfile
+    container_name: aimvp
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app-run/app
+    ports:
+      - 8000:8000
+    command: python

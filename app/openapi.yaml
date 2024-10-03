@@ -1,0 +1,72 @@
+openapi: 3.0.3
+info:
+  title: Examples
+  description: Examples
+  version: 1.0.0
+servers:
+  - url: /base
+
+paths:  
+  /hello:
+    get:
+      summary: Test
+      tags:
+      - "Test"
+      description: Test service
+      operationId: app.ServiceFacade.ServiceFacade.hello
+      parameters:
+        - in: query
+          name: name
+          description: Name to say hi
+          schema:
+            type: "string"
+      responses:
+        200:
+          description: OK
+        400:
+          description: "Error Format Data"
+        500:
+          description: "Internal server error"
+  /example:
+    get:
+      summary: Test
+      tags:
+      - "Test"
+      description: Test service
+      operationId: app.ServiceFacade.ServiceFacade.example
+      parameters:
+        - in: query
+          name: descriptions
+          description: Structure of Json
+          required: false
+          schema:
+            type: "string"
+      responses:
+        200:
+          description: OK
+        400:
+          description: "Error Format Data"
+        500:
+          description: "Internal server error"
+
+  /example2:
+    get:
+      summary: Test
+      tags:
+      - "Test"
+      description: Test service
+      operationId: app.ServiceFacade.ServiceFacade.example2
+      parameters:
+        - in: query
+          name: url
+          description: Structure of Json
+          required: false
+          schema:
+            type: "string"
+      responses:
+        200:
+          description: OK
+        400:
+          description: "Error Format Data"
+        500:
+          description: "Internal server error"
